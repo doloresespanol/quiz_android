@@ -2,6 +2,7 @@ package com.example.quiz_android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,21 +11,22 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     Button sprawdzButton;
-//    Button podpowiedzButton;
+    Button podpowiedzButton;
     RadioGroup odpowiedziRadioGroup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        podpowiedzButton = findViewById(R.id.button2);
-//        podpowiedzButton.setOnClickListener(
-//                new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//                        Toast.makeText(MainActivity.this, R.string.podpowiedz, Toast.LENGTH_SHORT).show();
-//                    }
-//                }
-//        );
+        podpowiedzButton = findViewById(R.id.button2);
+        podpowiedzButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intencja = new Intent(MainActivity.this,PodpowiedzActivity.class); //intencja jawna
+                        startActivity(intencja);
+                    }
+                }
+        );
         sprawdzButton = findViewById(R.id.button);
         sprawdzButton.setOnClickListener(
                 new View.OnClickListener() {
